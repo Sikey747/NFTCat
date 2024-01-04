@@ -1,23 +1,21 @@
 import React from "react";
-import LogoMin from "@/public/assets/icon/logo02.png";
-import LogoMax from "@/public/assets/logo.png";
-import Image from "next/image";
+import LogoMin from "@/public/assets/icon/Logo.svg";
 
 interface LogoProps {
-    variant: "min" | "max";
+    title?: boolean;
 }
 
-const Logo = ({ variant }: LogoProps) => {
+const Logo = ({ title = false }: LogoProps) => {
     return (
-        <div
-            className={`
-        ibg 
-        h-[32px]
-        ${variant === "min" ? "w-[32px]" : ""}
-        ${variant === "max" ? "w-[131px]" : ""}
-        `}>
-            <Image src={variant === "min" ? LogoMin : LogoMax} alt="logo" fill />
-        </div>
+        <>
+            {!title && <LogoMin className={`h-[32px] w-[32px] stroke-white overflow-visible`} />}
+            {title && (
+                <div className="flex items-center gap-1">
+                    <LogoMin className={`h-[32px] w-[32px] stroke-white overflow-visible`} />
+                    <p className="text-[18px] font-bold text-black-1 ">CryptoKet</p>
+                </div>
+            )}
+        </>
     );
 };
 

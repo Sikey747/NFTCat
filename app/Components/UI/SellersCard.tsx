@@ -1,7 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import Check from "@/public/assets/icon/Check.svg";
-import { Typography } from "./index";
+import { Typography, Avatar } from "./index";
 
 interface SellersCardProps {
     srs: string;
@@ -19,12 +18,11 @@ const SellersCard = ({ srs, title, price, position }: SellersCardProps) => {
                 </Typography>
             </div>
             <div className="mx-auto mt-[34px] flex flex-col gap-[5px] items-center justify-center text-center">
-                <div className="w-[77px] h-[77px] bg-grey-1 rounded-full ibg ">
-                    <Image src={srs} alt={title} fill />
+                <Avatar variant="mid" src={srs} alt={title}>
                     <div className="w-[15px] h-[15px] bg-[#00B247] rounded-full bottom-0 right-[5px] z-10 absolute flex justify-center items-center">
                         <Check />
                     </div>
-                </div>
+                </Avatar>
                 <Typography size="16" weight="SemiBold">
                     {title}
                 </Typography>

@@ -1,26 +1,35 @@
-import React, { type HTMLAttributes } from "react";
+import React, { type ComponentProps, type ElementType } from "react";
 
-interface TypographyProps extends HTMLAttributes<HTMLParagraphElement> {
+interface TypographyOwnProps<E extends ElementType = ElementType> {
     size?: "10" | "12" | "14" | "16";
     weight?: "Regular" | "SemiBold";
+    children: React.ReactNode;
+    className?: string;
+    element?: E;
 }
 
-const Typography = ({
+type TypographyProps<E extends ElementType> = TypographyOwnProps<E> &
+    Omit<ComponentProps<E>, keyof TypographyOwnProps>;
+
+const defaultElement = "p";
+
+const Typography = <E extends ElementType = typeof defaultElement>({
     size = "16",
     weight = "Regular",
     children,
     className,
+    element,
     ...props
-}: TypographyProps) => {
+}: TypographyProps<E>) => {
     const textSize = `text-[${size}px]`;
     const fontWeight = weight === "SemiBold" ? "font-semibold" : "font-normal";
-
+    const TagName = element ?? defaultElement;
     const combinedClassName = `${textSize} ${fontWeight} ${className ?? ""}`;
 
     return (
-        <p className={combinedClassName} {...props}>
+        <TagName className={combinedClassName} {...props}>
             {children}
-        </p>
+        </TagName>
     );
 };
 

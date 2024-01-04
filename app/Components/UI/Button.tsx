@@ -16,9 +16,9 @@ const Button = ({ variants = "primary", children, className, ...props }: ButtonP
         text-[14px] 
         font-semibold 
         active:translate-y-1
-        hover:opacity-80
-        ${variants === "primary" ? "bg-grad text-white" : ""}
-        ${variants === "secondary" ? "text-red-violet gradient-border" : ""}
+        flex-none
+        ${variants === "primary" ? "bg-grad text-white " : ""}
+        ${variants === "secondary" ? "text-red-violet gradient-border hover:opacity-80" : ""}
         ${className ?? ""}
       `}
             {...props}>

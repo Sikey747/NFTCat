@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { Providers as Nextuiprovider } from "./provider/Nextuiprovider";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
 
 const poppins = Poppins({
     weight: ["400", "600", "500", "700"],
@@ -17,7 +20,15 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <html lang="en">
-            <body className={`${poppins.variable}`}>{children}</body>
+            <body className={`${poppins.variable} bg-white`}>
+                <Nextuiprovider>
+                    <div className="flex flex-col h-dvh ">
+                        <Header />
+                        <main className="flex-1">{children}</main>
+                        <Footer />
+                    </div>
+                </Nextuiprovider>
+            </body>
         </html>
     );
 };
