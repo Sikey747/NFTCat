@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="pt-[32px] border-t border-grey-1">
             <Container variant="min" className="flex flex-col ">
-                <div className="flex flex-wrap md:flex-nowrap gap-3 justify-between border-b border-grey-1 pb-[32px]">
+                <div className="flex flex-wrap md:flex-nowrap gap-3 justify-between  pb-[32px]">
                     <div className="md:max-w-[357px] max-w-full flex flex-col gap-[25px]">
                         <Logo title />
                         <Typography size="16" weight="SemiBold">
@@ -69,34 +69,39 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="flex flex-wrap gap-2 py-[32px] items-center justify-center sm:justify-between">
+            </Container>
+
+            <div className=" border-t border-grey-1">
+                <Container
+                    variant="min"
+                    className="flex flex-wrap gap-2 py-[32px] items-center justify-center sm:justify-between">
                     <Typography className="text-center" size="16" weight="SemiBold">
                         CrpytoKet, Inc. All Rights Reserved
                     </Typography>
                     <ul className="flex gap-5 items-center ">
                         <li>
                             <Link href="/insta">
-                                <Instagram className="fill-black-1" />
+                                <Instagram className="fill-black-1 h-[25px] w-[25px]" />
                             </Link>
                         </li>
                         <li>
                             <Link href="/insta">
-                                <Twiter className="fill-black-1" />
+                                <Twiter className="fill-black-1 h-[25px] w-[25px]" />
                             </Link>
                         </li>
                         <li>
                             <Link href="/insta">
-                                <Telegram className="fill-black-1" />
+                                <Telegram className="fill-black-1 h-[25px] w-[25px] " />
                             </Link>
                         </li>
                         <li>
                             <Link href="/insta">
-                                <Discord className="fill-black-1" />
+                                <Discord className="fill-black-1 h-[25px] w-[25px]" />
                             </Link>
                         </li>
                     </ul>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </footer>
     );
 };

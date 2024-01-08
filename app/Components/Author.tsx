@@ -11,7 +11,7 @@ const Author = () => {
             />
             <Container variant="min" className="absolute top-[208px] left-[50%] translate-x-[-50%]">
                 <div className="relative w-full flex flex-col items-center justify-center gap-[10px]">
-                    <div className="w-[clamp(7.5rem,8.929vw+5.714rem,13.75rem)] h-[clamp(7.5rem,8.929vw+5.714rem,13.75rem)] rounded-full bg-black-1 p-[clamp(0.188rem,0.268vw+0.134rem,0.375rem)]">
+                    <div className="w-[clamp(7.5rem,8.929vw+5.714rem,13.75rem)] h-[clamp(7.5rem,8.929vw+5.714rem,13.75rem)] rounded-full bg-static-black p-[clamp(0.188rem,0.268vw+0.134rem,0.375rem)]">
                         <Avatar alt="515" src="/kk" variant="max" />
                     </div>
                     <h1>Mia Ayana</h1>

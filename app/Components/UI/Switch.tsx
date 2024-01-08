@@ -32,8 +32,6 @@ const SunIcon = () => (
     </svg>
 );
 
-// interface SwitchProps extends SwitchPropsUi {}
-
 const Switch = ({ ...atr }) => {
     return (
         <SwitchUi
@@ -41,6 +39,10 @@ const Switch = ({ ...atr }) => {
             defaultSelected
             size="lg"
             color="default"
+            classNames={{
+                wrapper: "group-data-[selected=true]:bg-red-violet bg-red-violet",
+                thumb: "bg-white",
+            }}
             thumbIcon={({ isSelected }) => (isSelected ? <SunIcon /> : <MoonIcon />)}
         />
     );

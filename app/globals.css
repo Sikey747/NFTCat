@@ -76,20 +76,18 @@ h4 {
     display: none;
 }
 .file-border {
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23333' stroke-width='1' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    /* background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23333' stroke-width='1' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e"); */
     border-radius: 10px;
+    border: 1px dashed black;
 }
-
 .nft-gradient {
     background: var(--red-linear);
 }
 
-.white-bg {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.nav-h {
-    height: calc(100vh - 66px);
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    box-shadow: 0 0 0 1000px white inset;
+    -webkit-text-fill-color: #333;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -10,18 +10,19 @@ const config: Config = {
     ],
     theme: {
         colors: {
+            "static-white": "#ffffff",
+            "static-black": "#24252D",
             transparent: "transparent",
             current: "currentColor",
             "red-linear":
                 "linear-gradient(101deg, #EB1484 27.35%, #C91CC3 99.99%, #C81CC5 100%, #C81CC5 100%)",
             "red-violet": "#DA18A3",
-            "grey-1": "#E3E1E3",
             "grey-2": "#888888",
             "grey-3": "#4F4F4F",
-
             "black-2": "#1B1A21",
-            "black-3": "#E3E1E3",
+            "black-3": "#2A2D3A",
             "black-4": "#24252D",
+            "black-5": "#2D2E36",
         },
         screens: {
             sm: "480px",
@@ -45,7 +46,8 @@ const config: Config = {
                         white: "#ffffff",
                         dark: "#24252D",
                         "black-1": "#2D2E36",
-                    }, // light theme colors
+                        "grey-1": "#E3E1E3",
+                    },
                 },
                 dark: {
                     background: "#24252D",
@@ -53,7 +55,8 @@ const config: Config = {
                         white: "#24252D",
                         dark: "#ffffff",
                         "black-1": "#ffffff",
-                    }, // dark theme colors
+                        "grey-1": "#2D2E36",
+                    },
                 },
             },
         }),

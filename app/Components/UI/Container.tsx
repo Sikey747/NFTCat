@@ -1,13 +1,14 @@
 import React, { type HTMLAttributes } from "react";
 
 interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
-    variant?: "max" | "mid" | "mid2" | "min";
+    variant?: "max" | "mid" | "mid2" | "min" | "min2";
 }
 
 const Container = ({ variant = "max", children, className, ...atr }: ContainerProps) => {
     return (
         <div
             className={`mx-auto px-[10px] 
+            ${variant === "min2" && `max-w-[610px]`}
             ${variant === "min" && `max-w-[990px]`}
             ${variant === "max" && `max-w-[1340px]`}
             ${variant === "mid" && `max-w-[1030px]`}

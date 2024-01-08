@@ -9,8 +9,12 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input = ({ className, variant, sizes = "min", ...atr }: InputProps) => {
     const props = {
         className: `
-        w-full black-2 text-[14px] placeholder:black-2 border-gray-1 border font-medium rounded-[10px] bg-transparent outline-none
-        ${variant === "Search" ? `pl-[45px] px-[15px] py-[7px]` : ""}
+        w-full dark:bg-black-5 text-[14px] placeholder:black-2 dark:placeholder:text-static-white border-gray-1 dark:border-black-5 border font-medium rounded-[10px] bg-transparent outline-none
+        ${
+            variant === "Search"
+                ? `pl-[45px] px-[15px] py-[7px] dark:bg-black-2 dark:border-black-2`
+                : ""
+        }
         ${sizes === "max" ? "px-[29px] py-[17px]" : "px-[18px] py-[12px]"}
         ${className}
         `,
@@ -20,7 +24,7 @@ const Input = ({ className, variant, sizes = "min", ...atr }: InputProps) => {
     if (variant === "Search") {
         return (
             <search className="relative w-full min-w-[218px]">
-                <Search className=" absolute top-[7px] left-[16px] stroke-grey-2" />
+                <Search className=" absolute top-[7px] left-[16px] fill-transparent stroke-grey-2 dark:stroke-static-white " />
                 <input {...props} />
             </search>
         );

@@ -15,3 +15,4 @@ export { default as Textarea } from "./Textarea";
 export { default as Fille } from "./Fille";
 export { default as Price } from "./Price";
 export { default as Switch } from "./Switch";
+export { default as ShopCard } from "./ShopCard";

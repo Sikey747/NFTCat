@@ -8,7 +8,7 @@ const ItemMenu = () => {
             <Container
                 variant="min"
                 className="gap-5 flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between items-center">
-                <Input variant="Search" className="w-auto" />
+                <Input variant="Search" placeholder="Search Item Here" className="w-auto" />
                 <Select data={sortData} defaultValue={sortData[0]} className="w-[233px]" />
             </Container>
         </section>

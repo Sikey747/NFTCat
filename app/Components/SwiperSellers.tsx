@@ -50,10 +50,10 @@ const SwiperSellers = () => {
                     {matches && (
                         <>
                             <button className="prev absolute top-[50%] translate-y-[-50%] left-[-15px] z-10">
-                                <Prev className="w-[30px] h-[30px] " />
+                                <Prev className="w-[30px] h-[30px] stroke-black-1" />
                             </button>
                             <button className="next absolute top-[50%] translate-y-[-50%] right-[-15px] z-10">
-                                <Next className="w-[30px] h-[30px] " />
+                                <Next className="w-[30px] h-[30px] stroke-black-1" />
                             </button>
                         </>
                     )}

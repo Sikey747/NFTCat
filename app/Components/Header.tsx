@@ -8,9 +8,9 @@ import Burger from "@/public/assets/icon/Burger.svg";
 import Close from "@/public/assets/icon/close.svg";
 import { useMediaQuery, useLockedBody } from "usehooks-ts";
 import { useTheme } from "next-themes";
+import { link } from "./../../mocap";
 
 const Header = () => {
-    const link = ["Explore", "My Items", "Following"];
     const pathname = usePathname();
     const matches = useMediaQuery("(min-width: 968px)");
     const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ const Header = () => {
     }, [matches]);
 
     return (
-        <header className="py-[clamp(1.063rem,1.161vw+0.83rem,1.875rem)] border-b border-grey-1 relative">
+        <header className="py-[clamp(1.063rem,1.161vw+0.83rem,1.875rem)] border-b border-grey-1 dark:border-red-violet relative">
             <Container
                 variant="max"
                 className="flex gap-[10px] lg:gap-5 items-center justify-between ">
@@ -39,19 +39,19 @@ const Header = () => {
                 <ul className="hidden lg:flex gap-5 items-center">
                     {link.map((el) => {
                         return (
-                            <li key={el}>
-                                <Link href={`/${el.toLocaleLowerCase().replace(" ", "")}`}>
+                            <li key={el.title}>
+                                <Link href={el.link}>
                                     <Typography
                                         size="16"
                                         weight="SemiBold"
-                                        className={`text-grey-2 whitespace-nowrap
+                                        className={`whitespace-nowrap
                                         ${
-                                            pathname === el.toLocaleLowerCase().replace(" ", "")
-                                                ? "text-black-1"
-                                                : ""
+                                            pathname === el.link
+                                                ? "text-black-1 dark:text-static-white"
+                                                : "text-grey-2"
                                         }
                                         `}>
-                                        {el}
+                                        {el.title}
                                     </Typography>
                                 </Link>
                             </li>
@@ -87,6 +87,11 @@ const Header = () => {
                     <Container className="flex flex-col h-full">
                         <div className="pt-[28px] pb-[15px] flex items-center justify-between gap-1">
                             <Logo />
+                            <Switch
+                                onClick={() => {
+                                    setTheme(theme === "dark" ? "light" : "dark");
+                                }}
+                            />
                             <button
                                 onClick={() => {
                                     handlerMenu();
@@ -98,30 +103,25 @@ const Header = () => {
                         <ul className="py-[12px] px-[2px] h-full flex flex-col gap-[15px] items-start border-t border-b border-grey-1">
                             {link.map((el) => {
                                 return (
-                                    <li key={el}>
-                                        <Link href={`/${el.toLocaleLowerCase().replace(" ", "")}`}>
+                                    <li key={el.title}>
+                                        <Link href={el.link}>
                                             <Typography
                                                 size="16"
                                                 weight="SemiBold"
-                                                className={` text-black-1
+                                                className={`
                                         ${
-                                            pathname === el.toLocaleLowerCase().replace(" ", "")
-                                                ? "text-black-1"
-                                                : ""
+                                            pathname === el.link
+                                                ? "text-black-1 dark:text-static-white"
+                                                : "text-grey-2"
                                         }
                                         `}>
-                                                {el}
+                                                {el.title}
                                             </Typography>
                                         </Link>
                                     </li>
                                 );
                             })}
                         </ul>
-                        <Switch
-                            onClick={() => {
-                                setTheme(theme === "dark" ? "light" : "dark");
-                            }}
-                        />
                         <div className="flex gap-[10px] pt-[20px] pb-[10px] items-center justify-between gap-1">
                             <Button>Create</Button>
                             <Button variants="secondary">Connect</Button>
